@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgba(60, 125, 199);
+            color: white;
+            font: normal 18px Arial;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Iniciando os estudos com o DOM</h1>
+    <p>Resultados</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique aqui</div>
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        p1.style.color = 'red';
+        // Mudar a div com o getElement 
+        var d = document.getElementById('msg')
+        d.style.background = 'green';
+        d.innerText = 'Aguardando...'
+        // Mudar a div com o querySelector
+        var j = document.querySelector('#msg')
+        j.style.background = 'black';
+    </script>
+</body>
+</html>
