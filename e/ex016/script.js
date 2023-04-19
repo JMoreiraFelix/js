@@ -7,11 +7,11 @@ function contar() {
     var p = Number(passo.value)
     var resultado = document.getElementById('res')
     
-    var soma = i + p
     if (inicio.value.length == '' || fim.value.length == '' || passo.value.length == '') {
-        alert("[ERROR]")
+        //Sem algum dado
         resultado.innerHTML = "Impossível de contar :("
-    } else if (p == 0) {
+    } else if (p <= 0) {
+        //Passo inválido
         alert("[PASSO INVÁLIDO ! SERÁ CONSIDERADO PASSO = 1]")
         p = 1
         soma = i + p
@@ -20,11 +20,22 @@ function contar() {
             resultado.innerHTML += `/ ${soma} `
             soma += p
             }
-    } else {
+    } else if (i < f) {
+        soma = i + p
         resultado.innerHTML = `${i} `
     while (soma <= f ) {
+        //Contagem crescente
         resultado.innerHTML += `/ ${soma} `
         soma += p
         }
+    } else if (i > f) {
+        p *= (-1)
+        soma = i + p
+        resultado.innerHTML = `${i} `
+        while (soma >= f ) {
+            //Contagem decrescente
+            resultado.innerHTML += `/ ${soma} `
+            soma += p
+            }
     }
 }
